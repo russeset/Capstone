@@ -1,0 +1,112 @@
+<!-- This part of the Project is based on the login section on Project 1  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Project 1</title>
+
+    <!-- Adding Bootsrap for better looks -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- Adding Font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Barlow&display=swap" rel="stylesheet">
+
+    <!-- Styling section -->
+    <style>
+        body {
+			font-family: 'Barlow', sans-serif;
+            text-align: center;
+            /* Background from https://uigradients.com/ */
+			background: -webkit-linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);  /* Chrome 10-25, Safari 5.1-6 */
+			background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+        
+        h3 {
+			color: white;
+    		line-height: 1.2 ;
+    		text-align: center;
+    		background: lightslategrey;
+   			margin: 0;
+    		font-weight: normal ;
+   			text-transform: uppercase; 
+    		padding-top: 25px;
+			padding-bottom: 25px;   
+			letter-spacing: 1px;
+        }
+        
+        .options {
+			background: white;
+    		height: 35px;
+    		text-align: center;
+    		
+        }
+        
+        a{		
+			border: none;
+    		background: none;
+    		text-transform: uppercase;
+    		font-weight: 680;
+			color: lightslategrey;
+    		letter-spacing: 1px;
+    		font-size: inherit;
+			transition: all 0.5s;  /* This gives the fading animation*/
+			padding-top: 15px;
+			padding-left:15px ;
+			padding-right:15px ;
+			padding-bottom:9px ;
+			
+   			 /* To work in most of the platform as possible */
+    		-webkit-transition: all 0.5s;
+    		-moz-transition: all 0.5;
+			text-decoration: none;
+			position: relative;
+			top: 5px;
+		}
+
+		a:hover {
+			color:white;
+			background: lightslategrey;
+			text-decoration: none;
+    
+		}
+
+        .jumbotron {
+            width: 360px;
+            margin: 55px auto; /* Move down the jumbotron, center everything*/
+            background: lightcyan;
+            box-shadow: 0 0 20px rgba(0,0,0.2);
+            
+        }
+
+        h4 {
+            padding-bottom: 15px;
+            letter-spacing: 1px;
+        }
+    </style>
+
+</head>
+<body>
+      <!-- Header-->
+        <h3> space vultur </h3>
+            <!-- Login information -->
+            <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                        <!-- section get the information after the enter action occurs -->
+                            <form method="POST" action="space_login.php">
+                                <h4> <strong> Login </strong></h4>
+                                    <div class="form-group">
+                                     <input type="text" name="log_in" class="form-control" maxlength="25" placeholder="Login ID:" required="required">
+                                    </div>
+                                    <div class="form-group">
+                                      <input type="password" name="password" class="form-control" max="25" placeholder="Password:" required="required">
+                                    </div>
+                                    <button id="btn" type="submit" class="btn btn-outline-primary"> Enter </button>
+                                  </form>
+                    </div>
+                  </div>
+          
+</body>
+</html>
