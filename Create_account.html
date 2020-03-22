@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+
+    	<!-- Adding Bootsrap for better looks -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- Adding Font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Barlow&display=swap" rel="stylesheet">
+
+    <!-- Styling section  -->
+    <style>
+        body{
+           
+            opacity: 0; 
+            transition: opacity 3s;
+            text-align: center;
+            /* Adding font */
+            font-family: 'Barlow', sans-serif;
+            /* Background from https://uigradients.com/ */
+            background: #00c6ff;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #0072ff, #00c6ff);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #0072ff, #00c6ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+            text-transform: uppercase; 
+            
+        }
+        .jumbotron-fluid {
+            letter-spacing: 1px;
+            padding-top:30px;
+            
+        }
+
+        
+		img {
+			width: 300px;
+			height: 225px;
+			opacity: 0.8;
+			padding-top: 35px;
+			float: center;	
+		}
+    </style>
+</head>
+
+<body onload="document.body.style.opacity='1'">
+    <img src="spacevulture.png" >
+
+    <div class="jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-3" > Creating Account </h1>
+          <p class="lead">One step Closer to see from the <strong>SKY</strong>.</p>
+
+         <!-- Inserting data into [insert_data.php] to save information into the database. -->
+          <form method="POST" action="insert_data.php">
+            <div class="row">
+              <div class="col">
+                <input type="text" class="form-control border-0" name="fName" placeholder="First name:" required>
+              </div>
+              <div class="col">
+                <input type="text" class="form-control border-0" name="lName" placeholder="Last name:">
+              </div>
+            </div>
+            
+            <br>
+
+            <div class="row">
+                <div class="col">
+                  <input type="text" class="form-control border-0" name="user" placeholder="User name:" required>
+                </div>
+                <div class="col">
+                  <input type="email" class="form-control border-0" name="schoolName" placeholder="School email:" required>
+                </div>
+              </div>
+
+              <br>
+
+              <div class="row">
+                <div class="col">
+                    <input type="text" class="form-control border-0" name="user_number" placeholder="User ID:" required>
+                 
+                </div>
+                <div class="col">
+                    <input type="password" class="form-control border-0" name="password" placeholder="Password:" required> 
+                </div>
+              </div>
+              <br>
+              <button id="sign_in" type="submit" class="btn btn-outline-dark border-0"> <strong>SIGN IN</strong> </button> 
+          </form>
+        </div>
+      </div>
+    
+    <!-- Adding Javascript for actions -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>
