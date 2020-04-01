@@ -39,10 +39,10 @@
 // This program is used to insert the information into the database using the [Create_account.html] file.
 
 // require credentials from database
-$servername = "imc.kean.edu";
-$username = "herrober";
-$password = "1004626";
-$dbname = "2020S_rha";
+$servername = "####";
+$username = "####";
+$password = "####";
+$dbname = "####";
 
 // creating connection to databaes
 $conn = new mysqli($servername, $username, $password, $dbname);
