@@ -65,7 +65,9 @@ VALUES ('$id', '$fName', '$lName', '$email', '$user', '$password')";
 // If input passed trough 
 if ($conn->query($sql) === TRUE) {
     echo " <img src='spacevulture.png'> ";
-    echo "Thank you for becoming a member, now is time to see from the SKY";
+    echo "Thank you for becoming a member, now is time to see from the SKY.";
+    echo "<br>";
+    echo "Click here to login and start the journey. <a href='Capstone_Login.html'> Here </a>";
 } 
 
 // else provide details to the error.
