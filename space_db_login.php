@@ -1,6 +1,6 @@
 <?php
-$server = "imc.kean.edu";
-$username = "herrober";
+$server = "";
+$username = "";
 $password = "";
-$dbname = "2020S_rha";
+$dbname = "";
 ?>
