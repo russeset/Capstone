@@ -25,39 +25,38 @@
 </head>
 <body>
 <?php
+////////////////////////////// BEGANING OF THE PROJECT ////////////////////////////////////
+    
+// Database's information
 include "space_db_login.php";
-$connect = mysqli_connect($server, $username, $password, $dbname);
+
+// Connecting SQL to database
+$connection = mysqli_connect($server, $username, $password, $dbname);
 if (mysqli_connect_errno())
-	die ("Connection Failed:". $con-> connect_error);
+die ("Connection Failed:". $connect-> connect_error);
 
-$login = $row['login'];
-$password = $row['password'];
+// Connecting loging from Capstone_Login.html, Setting up information for the log in
+$login = $_POST['login'];
+$password = $_POST['password'];
 
-$login = "SELECT username, password FROM 2020S_rha.login_data where username='$login' and password = '$password' ";
-$result = mysqli_query($connect, $login);
-$success = " ";
+// Connecting SQL to check for authentication
+$query = "SELECT * FROM login_data WHERE username='$login' and password= '$password' ";
 
-if (isset($_POST['login']) && isset($_POST['password']))
-{
-	while($row = mysqli_fetch_array($result))
-	{
-		if ($_POST['login'] == $login && $_POST['password'] == $password)
-		{
-			// After user susccesfully login show the video live stream with the information
-			echo "<h5>hello world</h5>";
-		}
-		if ($_POST['login'] == $login && $_POST['password'] != $password)
-			die("Username is in the Database, but the password is not!");
-		if ($_POST['login'] != $login && $_POST['password'] == $password)
-			die("Username is not in the Database, but the password is!");
-		if ($success == "true")
-			break;
-	}
-	if ($success == " ")
-		die ("Login is not in the database!");
-}
-mysqli_close($connect);
+$result = mysqli_query($connection, $query);
+$row = mysqli_fetch_array($result);
+$count_row=mysqli_num_rows($result); 
 
+if (($row['username']== $login) && ($row['password']== $password))
+  {
+	session_start();
+	echo "<h1>Hello World</h1>";
+	$username = $row["first_name"];
+	echo "<h1>Welcome user $username </h1>";
+  }
+
+  else {
+	  echo "conection failed";
+  }
 ?>
 </body>
 </html>
