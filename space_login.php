@@ -24,25 +24,29 @@
 	</style>
 </head>
 <body>
-	<h1>hghhg</h1>
 <?php
+include "space_db_login.php";
 $connect = mysqli_connect($server, $username, $password, $dbname);
 if (mysqli_connect_errno())
 	die ("Connection Failed:". $con-> connect_error);
-$login = "SELECT login, password FROM users";
+
+$login = $row['login'];
+$password = $row['password'];
+
+$login = "SELECT username, password FROM 2020S_rha.login_data where username='$login' and password = '$password' ";
 $result = mysqli_query($connect, $login);
 $success = " ";
+
 if (isset($_POST['login']) && isset($_POST['password']))
 {
 	while($row = mysqli_fetch_array($result))
 	{
-		$login = $row['login'];
-		$password = $row['password'];
 		if ($_POST['login'] == $login && $_POST['password'] == $password)
 		{
 			// After user susccesfully login show the video live stream with the information
+			echo "<h5>hello world</h5>";
 		}
-		if ($_POST['login'] == $login && $_POST['password'] != $passwordf)
+		if ($_POST['login'] == $login && $_POST['password'] != $password)
 			die("Username is in the Database, but the password is not!");
 		if ($_POST['login'] != $login && $_POST['password'] == $password)
 			die("Username is not in the Database, but the password is!");
@@ -53,6 +57,7 @@ if (isset($_POST['login']) && isset($_POST['password']))
 		die ("Login is not in the database!");
 }
 mysqli_close($connect);
+
 ?>
 </body>
 </html>
