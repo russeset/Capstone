@@ -17,11 +17,14 @@
     <!-- Styling section -->
     <style>
         body {
+            opacity: 0; 
+            transition: opacity 3s;
 			font-family: 'Barlow', sans-serif;
             text-align: center;
             /* Background from https://uigradients.com/ */
-			background: -webkit-linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);  /* Chrome 10-25, Safari 5.1-6 */
-			background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+			background: #00c6ff;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #0072ff, #00c6ff);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #0072ff, #00c6ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         }
         
         h3 {
@@ -40,8 +43,8 @@
         .options {
 			background: white;
     		height: 35px;
-    		text-align: center;
-    		
+    		text-align: left;
+            width: 100%;
         }
         
         a{		
@@ -73,6 +76,14 @@
     
 		}
 
+        img {
+			width: 200px;
+			height: 155px;
+			opacity: 0.8;
+			padding-top: 35px;
+			float: center;	
+		}
+
         .jumbotron {
             width: 360px;
             margin: 55px auto; /* Move down the jumbotron, center everything*/
@@ -88,9 +99,17 @@
     </style>
 
 </head>
-<body>
+<body onload="document.body.style.opacity='1'">
       <!-- Header-->
-        <h3> space vultur </h3>
+        <h3> space vulture </h3>
+
+        <!-- Back or main menue -->
+        <div class="options">
+            <a href="Capstone_Front.html"> Main Menue </a>
+        </div>
+
+        <img src="spacevulture.png" >
+
             <!-- Login information -->
             <div class="jumbotron jumbotron-fluid">
                     <div class="container">
@@ -98,7 +117,7 @@
                             <form method="POST" action="space_login.php">
                                 <h4> <strong> Login </strong></h4>
                                     <div class="form-group">
-                                     <input type="text" name="log_in" class="form-control" maxlength="25" placeholder="Login ID:" required="required">
+                                     <input type="text" name="login" class="form-control" maxlength="25" placeholder="Login ID:" required="required">
                                     </div>
                                     <div class="form-group">
                                       <input type="password" name="password" class="form-control" max="25" placeholder="Password:" required="required">
@@ -106,7 +125,7 @@
                                     <button id="btn" type="submit" class="btn btn-outline-primary"> Enter </button>
                                   </form>
                     </div>
-                  </div>
+            </div>
           
 </body>
 </html>
